@@ -21,6 +21,9 @@ public class Book {
     )
     private Set<Author> authors = new HashSet<>();
 
+    @ManyToOne
+    private Publisher publisher;
+
     public Long getId() {
         return id;
     }
@@ -45,6 +48,21 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
+    public Set<Author> getAuthors() {
+        return authors;
+    }
+
+    public void setAuthors(Set<Author> authors) {
+        this.authors = authors;
+    }
 
     @Override
     public boolean equals(Object o) {
